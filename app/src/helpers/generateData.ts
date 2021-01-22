@@ -15,7 +15,7 @@ const getInputs = (min: number, max: number, points: number): number[] => {
 }
 
 const generateProbabilityData = ({ mean, stdv }: inputs) => {
-  const data = []
+  const data: { input: number; prob: number }[] = []
   const min = mean - 4 * stdv
   const max = mean + 4 * stdv
 
@@ -31,6 +31,8 @@ const generateProbabilityData = ({ mean, stdv }: inputs) => {
       prob: probFunc(input),
     })
   })
+
+  return data
 }
 
 export { generateProbabilityData }

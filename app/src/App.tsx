@@ -1,14 +1,14 @@
-import React from 'react';
-import Chart from './components/Chart';
-import Header from './components/Header'
+import React from "react"
+import ChartContainer from "./components/ChartContainer"
+import Header from "./components/Header"
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Chart data={[{name: 'hello'}]}/> 
+      <Header />
+      <ChartContainer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
