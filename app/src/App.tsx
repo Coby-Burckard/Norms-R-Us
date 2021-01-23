@@ -1,13 +1,14 @@
 import React from "react"
 import ChartContainer from "./components/ChartContainer"
 import Header from "./components/Header"
+import { AppContainer } from "./styles/containerStyles"
 
 function App() {
   return (
-    <div className="App">
+    <AppContainer className="App">
       <Header />
       <ChartContainer />
-    </div>
+    </AppContainer>
   )
 }
 

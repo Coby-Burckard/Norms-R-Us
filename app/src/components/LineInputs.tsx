@@ -7,7 +7,7 @@ type Props = {
   lines: lineList
 }
 
-const InputBlock = ({ dispatch, lines }: Props) => {
+const LineInputs = ({ dispatch, lines }: Props) => {
   const [name, setName] = useState("")
   const [mean, setMean] = useState("")
   const [stdv, setStdv] = useState("")
@@ -46,29 +46,20 @@ const InputBlock = ({ dispatch, lines }: Props) => {
     }
   }
 
-  const deleteLine = (id: string) => () => {
-    dispatch({
-      type: "DELETE",
-      id,
-    })
-  }
+  const lineInputs = [
+    { value: name, onChange: updateName, placeholder: "name" },
+    { value: mean, onChange: updateMean, placeHolder: "mean" },
+    { value: stdv, onChange: updateStdv, placeholder: "stdv" },
+  ]
 
   return (
     <div>
-      <input value={name} onChange={updateName} placeholder="name" />
-      <input value={mean} onChange={updateMean} placeholder="mean" />
-      <input value={stdv} onChange={updateStdv} placeholder="stdv" />
-      <button onClick={addLine}>Add</button>
-      {lines.map(({ id, name, mean, stdv }) => (
-        <div key={id}>
-          <span>
-            {name}, {mean}, {stdv}
-          </span>
-          <button onClick={deleteLine(id)}>Remove</button>
-        </div>
+      {lineInputs.map((inputProps) => (
+        <input {...inputProps} />
       ))}
+      <button onClick={addLine}>Add</button>
     </div>
   )
 }
 
-export default InputBlock
+export default LineInputs

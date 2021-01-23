@@ -5,6 +5,7 @@ type probData = {
 
 type lineList = {
   id: string
+  color: string
   name: string
   mean: number
   stdv: number

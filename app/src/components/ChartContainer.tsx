@@ -1,7 +1,8 @@
 import React, { useEffect, useReducer, useState } from "react"
 import { generateProbabilityData } from "../helpers/generateData"
 import Chart from "./Chart"
-import InputBlock from "./InputBlock"
+import InputBlock from "./LineInputs"
+import DisplayLines from "./DisplayLines"
 
 import { lineList, probData } from "../types/common"
 import lineListReducer from "../reducers/lineList"
@@ -12,6 +13,7 @@ const initialLines: lineList = [
     name: "example",
     mean: 0,
     stdv: 1,
+    color: "#3CAEA3",
   },
 ]
 
@@ -27,6 +29,7 @@ const ChartContainer = () => {
     <div>
       <Chart lines={lines} data={data} />
       <InputBlock lines={lines} dispatch={dispatch} />
+      <DisplayLines lines={lines} dispatch={dispatch} />
     </div>
   )
 }
