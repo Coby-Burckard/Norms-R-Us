@@ -16,10 +16,10 @@ const DisplayLines = ({ lines, dispatch }: Props) => {
   }
   return (
     <>
-      {lines.map(({ id, name, mean, stdv }) => (
+      {lines.map(({ id, name, mean, stdv, pValue }) => (
         <div key={id}>
           <span>
-            {name}, {mean}, {stdv}
+            {name}, {mean}, {stdv}, {pValue}
           </span>
           <button onClick={deleteLine(id)}>Remove</button>
         </div>

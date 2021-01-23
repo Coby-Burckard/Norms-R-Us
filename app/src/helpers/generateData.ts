@@ -1,10 +1,5 @@
 import { lineList } from "../types/common"
 
-type inputs = {
-  mean: number
-  stdv: number
-}
-
 const findMinMax = (lines: lineList): { min: number; max: number } => {
   if (lines.length < 1) {
     return { min: 0, max: 0 }

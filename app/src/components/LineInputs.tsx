@@ -48,14 +48,14 @@ const LineInputs = ({ dispatch, lines }: Props) => {
 
   const lineInputs = [
     { value: name, onChange: updateName, placeholder: "name" },
-    { value: mean, onChange: updateMean, placeHolder: "mean" },
+    { value: mean, onChange: updateMean, placeholder: "mean" },
     { value: stdv, onChange: updateStdv, placeholder: "stdv" },
   ]
 
   return (
     <div>
       {lineInputs.map((inputProps) => (
-        <input {...inputProps} />
+        <input key={inputProps.placeholder} {...inputProps} />
       ))}
       <button onClick={addLine}>Add</button>
     </div>

@@ -17,7 +17,7 @@ const Chart = ({ data, lines }: { data: probData; lines: lineList }) => (
         />
         <YAxis allowDecimals={true} />
         <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
-        {lines.map((line, index: number) => (
+        {lines.map((line) => (
           <Line
             key={line.id}
             dataKey={line.id}

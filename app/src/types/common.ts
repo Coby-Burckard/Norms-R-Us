@@ -9,6 +9,8 @@ type lineList = {
   name: string
   mean: number
   stdv: number
+  zScore: number | string
+  pValue: number | string
 }[]
 
 export type { probData, lineList }

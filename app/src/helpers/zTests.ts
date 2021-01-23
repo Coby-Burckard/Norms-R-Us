@@ -2,14 +2,24 @@ const calcZScore = (mean: number, stdv: number, x: number): number => {
   return (x - mean) / stdv
 }
 
-const leftZTest = (mean: number, stdv: number, x: number): number => {
-  const zScore = calcZScore(mean, stdv, x)
+const leftZTest = (
+  mean: number,
+  stdv: number,
+  left: number,
+  right: number
+): number => {
+  const zScore = calcZScore(mean, stdv, left)
   const pValue = getZPercent(zScore)
   return pValue
 }
 
-const rightZTest = (mean: number, stdv: number, x: number) => {
-  return 1 - leftZTest(mean, stdv, x)
+const rightZTest = (
+  mean: number,
+  stdv: number,
+  left: number,
+  right: number
+) => {
+  return 1 - leftZTest(mean, stdv, right, left)
 }
 
 const twoSidedZTest = (
@@ -18,7 +28,9 @@ const twoSidedZTest = (
   left: number,
   right: number
 ) => {
-  return leftZTest(mean, stdv, left) + rightZTest(mean, stdv, right)
+  const result =
+    leftZTest(mean, stdv, left, right) + rightZTest(mean, stdv, left, right)
+  return result > 1 ? 1 : result
 }
 
 const getZPercent = (z: number): number => {
@@ -51,4 +63,4 @@ const getZPercent = (z: number): number => {
   return sum
 }
 
-export { leftZTest, rightZTest, twoSidedZTest }
+export { calcZScore, leftZTest, rightZTest, twoSidedZTest }
