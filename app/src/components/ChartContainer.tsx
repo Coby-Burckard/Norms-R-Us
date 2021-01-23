@@ -16,17 +16,16 @@ const initialLines: lineList = [
 ]
 
 const ChartContainer = () => {
-  const [mean, setMean] = useState(0)
-  const [stdv, setStdv] = useState(1)
-  const [data, setData] = useState<probData | undefined>(
-    generateProbabilityData({ mean, stdv })
-  )
-
   const [lines, dispatch] = useReducer(lineListReducer, initialLines)
+  const [data, setData] = useState<probData>(generateProbabilityData(lines))
+
+  useEffect(() => {
+    setData(generateProbabilityData(lines))
+  }, [lines])
 
   return (
     <div>
-      <Chart mean={mean} stdv={stdv} data={data} />
+      <Chart lines={lines} data={data} />
       <InputBlock lines={lines} dispatch={dispatch} />
     </div>
   )
