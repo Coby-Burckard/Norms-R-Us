@@ -8,7 +8,9 @@ const colors: { [key: string]: string } = {
 }
 
 const fontSize: { [key: string]: string } = {
-  medium: "16px",
+  small: "16px",
+  medium: "20px",
+  large: "32px",
 }
 
 const theme = { colors, fontSize }

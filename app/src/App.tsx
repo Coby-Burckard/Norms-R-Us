@@ -5,7 +5,7 @@ import { AppContainer } from "./styles/containerStyles"
 
 function App() {
   return (
-    <AppContainer className="App">
+    <AppContainer>
       <Header />
       <ChartContainer />
     </AppContainer>

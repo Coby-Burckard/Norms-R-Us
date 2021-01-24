@@ -5,6 +5,11 @@ const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 350px;
+    margin: 0 auto;
+  }
 `
 
 const ChartCont = styled.div`
@@ -13,6 +18,11 @@ const ChartCont = styled.div`
   height: 300px;
   > * {
     transform: translate(-24px, 0px);
+  }
+
+  @media (max-width: 768px) {
+    width: 325px;
+    height: 150px;
   }
 `
 
@@ -25,6 +35,11 @@ const GridContainer = styled.div`
   padding: 10px 20px;
   width: 500px;
   background-color: ${(props) => props.theme.colors.backgroundGrey};
+
+  @media (max-width: 768px) {
+    width: 300px;
+    padding: 10px 5px;
+  }
 `
 
 const GridNode = styled("div")<{ underline?: boolean }>`
@@ -33,10 +48,14 @@ const GridNode = styled("div")<{ underline?: boolean }>`
   justify-content: flex-start;
   align-items: center;
   height: 20px;
-  font-size: 20px;
+  font-size: ${(props) => props.theme.fontSize.medium};
   padding: 10px 0;
   border-bottom: ${(props) =>
     props.underline ? `1px solid ${props.theme.colors.darkGrey}` : "none"};
+
+  @media (max-width: 768px) {
+    font-size: ${(props) => props.theme.fontSize.small};
+  }
 `
 
 GridNode.defaultProps = {
@@ -45,6 +64,10 @@ GridNode.defaultProps = {
 
 const GridNodeName = styled(GridNode)`
   width: 175px;
+
+  @media (max-width: 768px) {
+    width: 100px;
+  }
 `
 
 const ColorIndicator = styled.div`
@@ -53,12 +76,18 @@ const ColorIndicator = styled.div`
   height: 20px;
   margin-right: 10px;
   width: 20px;
+
+  @media (max-width: 768px) {
+    border-radius: 3px;
+    height: 10px;
+    width: 10px;
+  }
 `
 const GridButton = styled.button`
   background-color: inherit;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: ${(props) => props.theme.fontSize.medium};
   padding: 0px;
   width: 50px;
   &:focus {
@@ -66,6 +95,11 @@ const GridButton = styled.button`
   }
   &:hover {
     color: ${(props) => props.theme.colors.grey};
+  }
+
+  @media (max-width: 768px) {
+    font-size: ${(props) => props.theme.fontSize.small};
+    width: 10px;
   }
 `
 
