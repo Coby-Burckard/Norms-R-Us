@@ -33,9 +33,9 @@ const ChartContainer = () => {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Chart lines={lines} data={data} />
         <LineInputs lines={lines} dispatch={dispatch} />
         <TestInputs lines={lines} dispatch={dispatch} />
+        <Chart lines={lines} data={data} />
         <DisplayLines lines={lines} dispatch={dispatch} />
       </ThemeProvider>
     </div>

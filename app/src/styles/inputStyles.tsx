@@ -31,14 +31,19 @@ const Input = styled.input`
 const Button = styled.button`
   border-radius: 5px;
   border: 1px solid ${(props) => props.theme.colors.grey};
-  background-color: ${(props) => props.theme.colors.backgroundGrey};
+  background-color: ${(props) => props.theme.colors.button};
   color: black;
   font-size: 20px;
-  width: 60px;
+  min-width: 60px;
+  min-height: 29.2px;
+  padding: 0px 5px;
   text-align: center;
   cursor: pointer;
   &:focus {
     outline: none;
+  }
+  &:hover {
+    background-color: ${(props) => props.theme.colors.buttonHover};
   }
 `
 
