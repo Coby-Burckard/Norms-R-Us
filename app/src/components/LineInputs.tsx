@@ -31,14 +31,10 @@ const LineInputs = ({ dispatch, lines }: Props) => {
   }
 
   const addLine = () => {
-    const subMean = parseInt(mean)
-    const subStdv = parseInt(stdv)
+    const subMean = parseFloat(mean)
+    const subStdv = parseFloat(stdv)
 
-    if (
-      name.length > 0 &&
-      typeof subStdv === "number" &&
-      typeof subMean === "number"
-    ) {
+    if (name.length > 0 && !isNaN(subMean) && !isNaN(subStdv)) {
       dispatch({
         type: "ADD",
         data: {
@@ -53,7 +49,7 @@ const LineInputs = ({ dispatch, lines }: Props) => {
   }
 
   const lineInputs = [
-    { value: name, onChange: updateName, placeholder: "name" },
+    { value: name, onChange: updateName, placeholder: "label" },
     { value: mean, onChange: updateMean, placeholder: "µ" },
     { value: stdv, onChange: updateStdv, placeholder: "σ" },
   ]
