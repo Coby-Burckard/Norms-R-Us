@@ -6,4 +6,13 @@ const AppContainer = styled.div`
   flex-direction: column;
   align-items: center;
 `
-export { AppContainer }
+
+const ChartCont = styled.div`
+  margin: 20px 0px 40px 0px;
+  width: 750px;
+  height: 300px;
+  > * {
+    transform: translate(-24px, 0px);
+  }
+`
+export { AppContainer, ChartCont }

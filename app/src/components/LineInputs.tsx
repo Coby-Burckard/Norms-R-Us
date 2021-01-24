@@ -1,6 +1,12 @@
 import React, { Dispatch, useState } from "react"
 import { LinesAction } from "../reducers/lineList"
 import { lineList } from "../types/common"
+import {
+  Button,
+  Input,
+  InputContainer,
+  InputLabel,
+} from "../styles/inputStyles"
 
 type Props = {
   dispatch: Dispatch<LinesAction>
@@ -48,17 +54,18 @@ const LineInputs = ({ dispatch, lines }: Props) => {
 
   const lineInputs = [
     { value: name, onChange: updateName, placeholder: "name" },
-    { value: mean, onChange: updateMean, placeholder: "mean" },
-    { value: stdv, onChange: updateStdv, placeholder: "stdv" },
+    { value: mean, onChange: updateMean, placeholder: "µ" },
+    { value: stdv, onChange: updateStdv, placeholder: "σ" },
   ]
 
   return (
-    <div>
+    <InputContainer>
+      <InputLabel>New Line</InputLabel>
       {lineInputs.map((inputProps) => (
-        <input key={inputProps.placeholder} {...inputProps} />
+        <Input key={inputProps.placeholder} {...inputProps} />
       ))}
-      <button onClick={addLine}>Add</button>
-    </div>
+      <Button onClick={addLine}>Add</Button>
+    </InputContainer>
   )
 }
 

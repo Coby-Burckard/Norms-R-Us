@@ -1,11 +1,12 @@
 import React from "react"
 import { LineChart, Line, XAxis, CartesianGrid, YAxis } from "recharts"
 import { lineList, probData } from "../types/common"
+import { ChartCont } from "../styles/containerStyles"
 
 const Chart = ({ data, lines }: { data: probData; lines: lineList }) => (
-  <>
+  <ChartCont>
     {data.length > 0 && (
-      <LineChart width={730} height={250} data={data}>
+      <LineChart width={730} height={300} data={data}>
         <XAxis
           allowDecimals={false}
           dataKey="input"
@@ -29,7 +30,7 @@ const Chart = ({ data, lines }: { data: probData; lines: lineList }) => (
         ))}
       </LineChart>
     )}
-  </>
+  </ChartCont>
 )
 
 export default Chart

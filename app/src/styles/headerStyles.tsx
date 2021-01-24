@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const H1 = styled.h1`
-  color: red;
+  color: black;
 `
 
-export { H1} 
+export { H1 }
