@@ -11,4 +11,6 @@ const fontSize: { [key: string]: string } = {
   medium: "16px",
 }
 
-export default { colors, fontSize }
+const theme = { colors, fontSize }
+
+export default theme
