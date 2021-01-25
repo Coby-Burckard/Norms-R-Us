@@ -23,6 +23,9 @@ const ChartCont = styled.div`
   @media (max-width: 768px) {
     width: 300px;
     height: 150px;
+    > * {
+      transform: translate(0px, 0px);
+    }
   }
 `
 
